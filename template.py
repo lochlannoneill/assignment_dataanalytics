@@ -5,19 +5,12 @@ Created on a cloudy day
 @id: R00175741
 @Cohort: Group A, subgroup A1
 """
-
-#To Do:
-    #tidy file more readable
-    #task 4
-    
-    
     
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt 
 
-    
 
 df = pd.read_csv("movie_metadata.csv", encoding = 'utf8')
 
