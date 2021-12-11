@@ -45,7 +45,7 @@ def Task3():#working
     plt.bar(x=g['title_year'], height=g['gross'])
     plt.show()
 
-def Task4(): #--------------------------TO DO_____________________________
+def Task4():
     df['gross'].dropna(inplace=True)
     df['budget'].dropna(inplace=True)
     df_y = df[df['title_year'] > 1989].reset_index(drop=True)
@@ -60,12 +60,13 @@ def Task4(): #--------------------------TO DO_____________________________
     years = years.sort_values(by="year").reset_index(drop=True)
     years1 = df_bud['title_year'].value_counts().to_frame().reset_index()
     years1.columns = ['year', 'count']
-    
-    # years =
-    
+    years1 = years1.sort_values(by="year").reset_index(drop=True)
+    per = []
+    for i in range(len(years)):
+        per.append((years1['count'][i] * 100) / years['count'][i])
     plt.xlabel("Year")
     plt.ylabel("Percentage")
-    plt.bar(x=years['year'], color='blue')
+    plt.bar(x=years['year'], height=per, color='blue')
     plt.show()
 
 def Task5(): #working
